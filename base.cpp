@@ -10,7 +10,7 @@ class entry {
 	struct entry* next;
 
 public:
-	entry(double x, double y, double z, int orientation) {
+	entry(double x = 0, double y = 0, double z = 0, int orientation = 0) {
 		this->x = x;
 		this->y = y;
 		this->z = z;
@@ -23,8 +23,7 @@ class data {
 	
 
 public:
-	void read(FILE* file) {
-		string fileName = "trainingData.txt";
+	void read(string fileName) {
 		ofstream fout;
 
 		fout.open(fileName);
@@ -36,5 +35,32 @@ public:
 			}
 
 		}
+	}
+
+	string whatOrientation(int orientation) {
+		switch (orientation) {
+		case '1': {
+			return "This is xx";
+		}
+		case '2': {
+			return "This is xx";
+		}
+		case '3': {
+			return "This is xx";
+		}
+		case '4': {
+			return "This is xx";
+		}
+		case '5': {
+			return "This is xx";
+		}
+		case '6': {
+			return "This is xx";
+		}
+		default: {
+			return "This is not a valid return type";
+		}
+		}
+		
 	}
 };
