@@ -4,13 +4,12 @@
 
 using namespace std;
 
-class thing {
-public:
+struct thing {
 	string x, y, z;
 	string orientation;
-	struct thing* next;
+	thing *next;
 
-	thing(double x = 0, double y = 0, double z = 0, int orientation = 0) {
+	thing(double x = '0', double y = '0', double z = '0', int orientation = '0') {
 		this->x = x;
 		this->y = y;
 		this->z = z;
@@ -19,7 +18,15 @@ public:
 	}
 
 	thing* makeThing(thing* head) {
-		thing newThing(0, 0, 0, 0);
-		head->next = &newThing;
+		thing* newThing;
+
+		if (head->next == NULL) {
+			head = newThing;
+		}
+		else {
+			head->next = newThing;
+		}
+
+		return newThing;
 	}
 };

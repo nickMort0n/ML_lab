@@ -1,20 +1,4 @@
-﻿  This_Has_Data.cpp
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         with
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         [
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:             _Elem=char
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         ]
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         with
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         [
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:             _Elem=char
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         ]
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         with
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         [
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:             _Elem=char
-C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         ]
-  base.cpp
+﻿  base.cpp
 C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
 C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         with
 C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         [
@@ -36,11 +20,46 @@ C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:    
 C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         ]
   (compiling source file 'base.cpp')
   
-C:\Users\nicho\source\repos\ML_lab1\base.cpp(34,16): error C2819: type 'thing' does not have an overloaded member 'operator ->'
-      C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(7,8):
-      see declaration of 'thing'
-      C:\Users\nicho\source\repos\ML_lab1\base.cpp(34,16):
-      did you intend to use '.' instead?
+C:\Users\nicho\source\repos\ML_lab1\base.cpp(30,18): error C3861: 'makeThing': identifier not found
+  main.cpp
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         with
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         [
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:             _Elem=char
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         ]
+  (compiling source file 'main.cpp')
   
-C:\Users\nicho\source\repos\ML_lab1\base.cpp(34,24): error C2232: '->thing::next': left operand has 'struct' type, use '.'
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         with
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         [
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:             _Elem=char
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         with
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         [
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:             _Elem=char
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\nicho\source\repos\ML_lab1\base.cpp(30,18): error C3861: 'makeThing': identifier not found
+  (compiling source file 'main.cpp')
+  
+  This_Has_Data.cpp
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         with
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         [
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:             _Elem=char
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(13,13): warning C4244:         ]
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         with
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         [
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:             _Elem=char
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(14,13): warning C4244:         ]
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244: 'argument': conversion from 'double' to 'const _Elem', possible loss of data
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         with
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         [
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:             _Elem=char
+C:\Users\nicho\source\repos\ML_lab1\This_Has_Data.cpp(15,13): warning C4244:         ]
   Generating Code...

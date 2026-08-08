@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <vector>
 #include "This_Has_Data.cpp"
 
 using namespace std;
@@ -21,27 +22,30 @@ public:
 			cout << "Training file failed to open";
 			return;
 		}
-		thing newThing = head;
-		if (file.is_open()) {
-			while (!file.eof()) {
-				string line;
-				getline(file, line);
-				istringstream issLine(line);
-				getline(issLine, newThing.x, ','); //turns up to the first comma into the x coordinate
-				getline(issLine, newThing.y, ','); //turns up to the first comma into the y coordinate
-				getline(issLine, newThing.z, ','); //turns up to the first comma into the z coordinate
-				getline(issLine, newThing.orientation);
-				newThing = newThing->next;
-			}
-		}
 
-		//vector<string> contents;
-		//string line;
+		thing* current = &head;
+		string line;
 
-		//while (!file.eof()) {
-		//	getline(file, line);
-		//	contents.push_back(line); //last line read pushed to the back of the vector
+		//if (file.is_open()) {
+		//	while (getline(file, line)) {
+		//		thing* node = new thing();
+		//		getline(file, line);
+		//		istringstream issLine(line);
+		//		getline(issLine, node.x, ','); //turns up to the first comma into the x coordinate
+		//		getline(issLine, node.y, ','); //turns up to the first comma into the y coordinate
+		//		getline(issLine, node.z, ','); //turns up to the first comma into the z coordinate
+		//		getline(issLine, node.orientation);
+		//		current = current->next;
+		//	}
 		//}
+
+		vector<string> data;
+		string line;
+
+		while (!file.eof()) {
+			getline(file, line);
+			data.push_back(line); //last line read pushed to the back of the vector
+		}
 
 		file.close();
 
