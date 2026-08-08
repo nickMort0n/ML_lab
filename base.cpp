@@ -1,66 +1,65 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+#include "This_Has_Data.cpp"
 
 using namespace std;
 
-class entry {
-	double x, y, z;
-	int orientation;
-	struct entry* next;
-
+class NN : public data{
 public:
-	entry(double x = 0, double y = 0, double z = 0, int orientation = 0) {
-		this->x = x;
-		this->y = y;
-		this->z = z;
-		this->orientation = orientation;
-		this->next = NULL;
-	}
-};
+	void read() {
+		string fileName;
+		ifstream file;
 
-class data {
-	
+		cout << "Enter the name of the file: ";
+		cin >> fileName;
+		file.open(fileName); //hard coded to trainingData because this is only for training
 
-public:
-	void read(string fileName) {
-		ofstream fout;
+		if (file.fail()) {
+			cout << "Training file failed to open";
+			return;
+		}
 
-		fout.open(fileName);
+		vector<string> contents;
 		string line;
 
-		if (fout.is_open()) {
-			while (getline(fileName, line)) {
-				
-			}
+		while (!file.eof()) {
+			getline(file, line);
+			contents.push_back(line); //last line read pushed to the back of the vector
+		}
 
-		}
-	}
+		file.close();
 
-	string whatOrientation(int orientation) {
-		switch (orientation) {
-		case '1': {
-			return "This is xx";
+		for (auto file_line : contents) {
+			cout << file_line << endl;
 		}
-		case '2': {
-			return "This is xx";
-		}
-		case '3': {
-			return "This is xx";
-		}
-		case '4': {
-			return "This is xx";
-		}
-		case '5': {
-			return "This is xx";
-		}
-		case '6': {
-			return "This is xx";
-		}
-		default: {
-			return "This is not a valid return type";
-		}
-		}
-		
 	}
 };
+
+//put this function somewhere else
+/*string whatOrientation(int orientation) {
+		switch (orientation) {// case statements indented for readability
+			case '1': {
+				return "This is face up";
+			}
+			case '2': {
+				return "This is face down";
+			}
+			case '3': {
+				return "This is portrait";
+			}
+			case '4': {
+				return "This is portrait upside down";
+			}
+			case '5': {
+				return "This is landscape left";
+			}
+			case '6': {
+				return "This is landscape right";
+			}
+			default: {
+				return "This is not a valid return type";
+			}
+		}
+	}*/
