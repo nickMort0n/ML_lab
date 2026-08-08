@@ -1,12 +1,13 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
-#include <vector>
 #include "This_Has_Data.cpp"
 
 using namespace std;
+thing head;
 
-class NN : public data{
+class NN {
 public:
 	void read() {
 		string fileName;
@@ -20,20 +21,33 @@ public:
 			cout << "Training file failed to open";
 			return;
 		}
-
-		vector<string> contents;
-		string line;
-
-		while (!file.eof()) {
-			getline(file, line);
-			contents.push_back(line); //last line read pushed to the back of the vector
+		thing newThing = head;
+		if (file.is_open()) {
+			while (!file.eof()) {
+				string line;
+				getline(file, line);
+				istringstream issLine(line);
+				getline(issLine, newThing.x, ','); //turns up to the first comma into the x coordinate
+				getline(issLine, newThing.y, ','); //turns up to the first comma into the y coordinate
+				getline(issLine, newThing.z, ','); //turns up to the first comma into the z coordinate
+				getline(issLine, newThing.orientation);
+				newThing = newThing->next;
+			}
 		}
+
+		//vector<string> contents;
+		//string line;
+
+		//while (!file.eof()) {
+		//	getline(file, line);
+		//	contents.push_back(line); //last line read pushed to the back of the vector
+		//}
 
 		file.close();
 
-		for (auto file_line : contents) {
-			cout << file_line << endl;
-		}
+		//for (auto file_line : contents) {
+		//	cout << file_line << endl;
+		//}
 	}
 };
 
