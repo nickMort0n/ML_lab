@@ -1,10 +1,15 @@
 #include <iostream>
+#include <cstdlib>
 #include "base.cpp"
+#include "This_Has_Data.cpp"
 
 using namespace std;
 
 int main() {
-	NN test;
-	test.read();
-	return 4000000;
+	thing* head = (thing*)malloc(sizeof(thing));
+	
+	vector<string> list = train();
+	transform(list, head);
+	
+	return 0;
 }
