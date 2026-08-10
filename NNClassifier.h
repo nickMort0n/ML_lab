@@ -1,16 +1,16 @@
-#pragma once
+#ifndef NNCLASSIFIER_H
+#define NNCLASSIFIER_H
 #include <string>
 #include <vector>
-#include "This_Has_Data.cpp"
+#include "thing.h"
 
 using namespace std;
 
-class NNClassifier {
+class NN : protected thing {
 public:
-	NNClassifier();
-	~NNClassifier();
-
+	NN();
+	NN* thingToNN(thing*);
 	vector<string> train(string);
-	void transform(vector<string>, thing*);
-	void printToFile(string, thing*);
+	void printToFile(string, NN*);
 };
+#endif

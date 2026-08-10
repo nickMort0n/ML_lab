@@ -1,20 +1,21 @@
 #include <iostream>
 #include <cstdlib>
-#include "NN.cpp"
-#include "This_Has_Data.cpp"
+#include "NNClassifier.h"
+#include "thing.h"
 
 using namespace std;
 
 int main() {
 	thing* head = new thing(); //head of the list
+	NN* baseNN = new NN();
 	string trainingFile = "trainingData.txt";
-	vector<string> list = train(trainingFile); //training data used to make a list
-	transform(list, head);
+	vector<string> list = baseNN->train(trainingFile); //training data used to make a list
+	head->transform(list, head);
 	
 	string thisHoldsStuff; //just read the variable name.
 	thing* data = new thing(); //used to start a new "list"
-	int selection;
 	
+	int selection;
 	cout << "Please select a method:\n1. NN\n2. KNN\n3. AnotherClassifier\nPlease make your selection: ";
 	cin >> selection;
 
@@ -35,12 +36,12 @@ int main() {
 		vector<string> info; //new string for new data
 		info.push_back(thisHoldsStuff); //adds the user input to the new vector
 
-		transform(info, data); //input turned into a usable object
+		head->transform(info, data); //input turned into a usable object
 
 		thing* nData = data->getNext(); //just so I don't need to constantly use data->getNext()->doSomething()
 		delete data; //frees the memory from data bc it's not needed anymore
 		
-		findOrientation(nData, head);
+		head->findOrientation(nData, head);
 
 		cout << nData->whatOrientation(stoi(nData->getOrientation())) << endl; //prints the orientation
 	}
@@ -50,7 +51,7 @@ int main() {
 		cout << "Please enter the name of the current file: ";
 		cin >> fileName;
 
-		printToFile(fileName, head); //simplified because I did this on another day and am too lazy to simplify nSelection 1
+		baseNN->printToFile(fileName, baseNN->thingToNN(head)); //simplified because I did this on another day and am too lazy to simplify nSelection 1
 	}
 
 	return 0;

@@ -139,11 +139,15 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnotherClassifier.cpp" />
+    <ClCompile Include="KNNClassifier.cpp" />
     <ClCompile Include="NN.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="This_Has_Data.cpp" />
+    <ClCompile Include="thing.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnotherClassifier.h" />
+    <ClInclude Include="KNNClassifier.h" />
     <ClInclude Include="NNClassifier.h" />
     <ClInclude Include="thing.h" />
   </ItemGroup>
