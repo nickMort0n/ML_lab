@@ -139,7 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="base.cpp" />
+    <ClCompile Include="Global_Functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="This_Has_Data.cpp" />
   </ItemGroup>

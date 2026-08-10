@@ -7,20 +7,6 @@
 
 using namespace std;
 
-inline thing* makeThing(thing* head) { //NO REASON FOR THIS TO BE IN THE THING STRUCTURE
-	thing* newThing = (struct thing*)malloc(sizeof(struct thing));
-
-	if (head->next == NULL) {
-		head = newThing;
-	}
-
-	else {
-		head->next = newThing;
-	}
-
-	return newThing;
-}
-
 inline vector<string> train() {
 	ifstream file;
 
@@ -45,19 +31,20 @@ inline vector<string> train() {
 
 inline void transform(vector<string> stuff, thing* head) {
 	string line;
-	char deliminator = ',';
-
 	vector<string> nLine = stuff;
-	string token;
+	thing* current = head;
 
 	for (int i = 0; i < stuff.size(); i++) {
-		thing* node = makeThing(head);
+		thing* node = current->makeThing(current);
 		istringstream issLine(nLine[i]);
 
 		getline(issLine, node->x, ',');
 		getline(issLine, node->y, ',');
 		getline(issLine, node->z, ',');
 		getline(issLine, node->orientation);
+
+		current->next = node;
+		current = node;
 	}
 }
 
@@ -83,7 +70,7 @@ inline string whatOrientation(int orientation) {
 			return "This is landscape right";
 		}
 		default: {
-			return "This is not a valid return type";
+			return "This is not a valid input, try harder next time.";
 		}
 	}
 }
