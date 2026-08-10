@@ -9,10 +9,11 @@
 using namespace std;
 
 class thing {
-private:
+protected:
 	string x, y, z;
 	string orientation;
 	thing *next;
+
 public:
 	thing(string x = "0", string y = "0", string z = "0", string orientation = "0") {
 		this->x = x; //stod to turn a string into a double
@@ -30,8 +31,8 @@ public:
 		return this->orientation;
 	}
 
-	int setOrientation(string object) {
-		return stoi(object);
+	void setOrientation(string object) {
+		this->orientation = object;
 	}
 
 	double findDistance(thing* original, thing* point) {
@@ -48,5 +49,47 @@ public:
 		return newThing;
 	}
 
-	friend void transform(vector<string> stuff, thing* head);
+	string whatOrientation(int orientation) {
+		switch (orientation) {// case statements indented for readability
+			case 1: {
+				return "Face up";
+			}
+			case 2: {
+				return "Face down";
+			}
+			case 3: {
+				return "Portrait";
+			}
+			case 4: {
+				return "Portrait upside down";
+			}
+			case 5: {
+				return "Landscape left";
+			}
+			case 6: {
+				return "Landscape right";
+			}
+			default: {
+				return "This is not a valid input, try harder next time.";
+			}
+		}
+	}
+
+	string findOrientation(thing* nData, thing* head) {
+		thing* holder = head->getNext();
+		thing* closest = holder;
+
+		//if the distance between the current held node is less than the current closest, the current held is the new closest
+		while (holder != NULL) {
+			if (nData->findDistance(nData, closest) > nData->findDistance(nData, holder)) {
+				closest = holder;
+			}
+
+			holder = holder->getNext();
+		}
+
+		nData->setOrientation(closest->getOrientation()); //sets a new orientation for the wanted element
+
+		return nData->getOrientation();
+	}
 };

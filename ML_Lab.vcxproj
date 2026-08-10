@@ -139,9 +139,13 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Global_Functions.cpp" />
+    <ClCompile Include="NN.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="This_Has_Data.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NNClassifier.h" />
+    <ClInclude Include="thing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
